@@ -1,0 +1,18 @@
+syntax="proto3";
+
+package service;
+
+service CMQ {
+    rpc Push(CMQPushServiceReq) returns (CMQPushServiceResp) {}
+}
+
+message CMQPushServiceReq {
+    string region = 1;
+    string topic = 2;
+    string message = 3;
+}
+
+message CMQPushServiceResp {
+    int32 code = 1;
+    string message = 2;
+}
